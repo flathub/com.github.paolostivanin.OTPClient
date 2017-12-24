@@ -5,14 +5,24 @@
   "sdk": "org.gnome.Sdk",
   "command": "otpclient",
   "finish-args": [
-    "--filesystem=~/.config",
     "--share=ipc",
     "--socket=x11",
-    "--socket=wayland"
+    "--socket=wayland",
+    /* This is broken, see issue #30 */
+    "--filesystem=~/.config"
   ],
+
   "modules": [
     {
       "name": "libzip",
+      "config-opts": ["--disable-static"],
+      "cleanup": [
+        "/include",
+        "/bin",
+        "/share",
+        "/lib/pkgconfig",
+        "/lib/*.la"
+      ],
       "sources": [
         {
           "type": "archive",
@@ -23,6 +33,15 @@
     },
     {
       "name": "libgpg-error",
+      "config-opts": ["--disable-static"],
+      "cleanup": [
+        "/include",
+        "/bin",
+        "/share/man",
+        "/share/aclocal",
+        "/lib/pkgconfig",
+        "/lib/*.la"
+      ],
       "sources": [
         {
           "type": "archive",
@@ -33,6 +52,15 @@
     },
     {
       "name": "libgcrypt",
+      "config-opts": ["--disable-static"],
+      "cleanup": [
+        "/include",
+        "/bin",
+        "/share/man",
+        "/share/aclocal",
+        "/lib/pkgconfig",
+        "/lib/*.la"
+      ],
       "sources": [
         {
           "type": "archive",
@@ -43,8 +71,11 @@
     },
     {
       "name": "libbaseencode",
-      "no-autogen": true,
-      "cmake": true,
+      "buildsystem": "cmake-ninja",
+      "config-opts": ["-DCMAKE_BUILD_TYPE=Release"],
+      "cleanup": [
+        "/include"
+      ],
       "sources": [
         {
           "type": "archive",
@@ -55,8 +86,11 @@
     },
     {
       "name": "libcotp",
-      "no-autogen": true,
-      "cmake": true,
+      "buildsystem": "cmake-ninja",
+      "config-opts": ["-DCMAKE_BUILD_TYPE=Release"],
+      "cleanup": [
+        "/include"
+      ],
       "sources": [
         {
           "type": "archive",
@@ -67,13 +101,20 @@
     },
     {
       "name": "OTPClient",
-      "no-autogen": true,
-      "cmake": true,
+      "buildsystem": "cmake-ninja",
+      "config-opts": ["-DCMAKE_BUILD_TYPE=Release"],
       "sources": [
         {
           "type": "archive",
           "url": "https://github.com/paolostivanin/OTPClient/archive/v1.0.2.tar.gz",
           "sha256": "95442139fd96ceb0793c19f2c6f95e5b974a853f9c4a67caba9245e48416da38"
+        },
+        {
+          "type": "shell",
+          "commands": [
+            /* issue #29 */
+            "sed -i 's/org.gnome.OTPClient/com.github.paolostivanin.OTPClient/' src/main.c"
+          ]
         }
       ]
     }
