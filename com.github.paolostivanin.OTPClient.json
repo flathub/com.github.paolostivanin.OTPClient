@@ -70,13 +70,6 @@
           "type": "archive",
           "url": "https://github.com/paolostivanin/OTPClient/archive/v1.0.2.tar.gz",
           "sha256": "95442139fd96ceb0793c19f2c6f95e5b974a853f9c4a67caba9245e48416da38"
-        },
-        {
-          "type": "shell",
-          "commands": [
-            /* issue #29 */
-            "sed -i 's/org.gnome.OTPClient/com.github.paolostivanin.OTPClient/' src/main.c"
-          ]
         }
       ]
     }
