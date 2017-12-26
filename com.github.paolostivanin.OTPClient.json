@@ -8,8 +8,7 @@
     "--share=ipc",
     "--socket=x11",
     "--socket=wayland",
-    /* This is broken, see issue #30 */
-    "--filesystem=~/.config"
+    "--filesystem=home"
   ],
 
   "modules": [
@@ -68,8 +67,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/paolostivanin/OTPClient/archive/v1.0.2.tar.gz",
-          "sha256": "95442139fd96ceb0793c19f2c6f95e5b974a853f9c4a67caba9245e48416da38"
+          "url": "https://github.com/paolostivanin/OTPClient/archive/v1.0.4.tar.gz",
+          "sha256": "7231e88aeec816a35b1b4031d3a1b3f1f371cdeef28b3ead7a73f21b68a85f2f"
         }
       ]
     }
