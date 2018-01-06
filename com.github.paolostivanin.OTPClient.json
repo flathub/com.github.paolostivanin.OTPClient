@@ -8,9 +8,11 @@
     "--share=ipc",
     "--socket=x11",
     "--socket=wayland",
-    "--filesystem=home"
+    "--filesystem=xdg-run/dconf",
+    "--filesystem=~/.config/dconf:ro",
+    "--talk-name=ca.desrt.dconf",
+    "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
   ],
-
   "modules": [
     {
       "name": "libzip",
@@ -63,12 +65,12 @@
     {
       "name": "OTPClient",
       "buildsystem": "cmake-ninja",
-      "config-opts": ["-DCMAKE_BUILD_TYPE=Release"],
+      "config-opts": ["-DCMAKE_BUILD_TYPE=Release", "-DUSE_FLATPAK_APP_FOLDER=ON"],
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/paolostivanin/OTPClient/archive/v1.0.4.tar.gz",
-          "sha256": "7231e88aeec816a35b1b4031d3a1b3f1f371cdeef28b3ead7a73f21b68a85f2f"
+          "url": "https://github.com/paolostivanin/OTPClient/archive/v1.0.5.tar.gz",
+          "sha256": "e2cbea52b4c5574ad7cb06100b32a5b12947f6061dbee43177f5ac7802c8f226"
         }
       ]
     }
