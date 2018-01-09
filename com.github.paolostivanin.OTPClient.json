@@ -69,8 +69,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/paolostivanin/OTPClient/archive/v1.0.5.tar.gz",
-          "sha256": "e2cbea52b4c5574ad7cb06100b32a5b12947f6061dbee43177f5ac7802c8f226"
+          "url": "https://github.com/paolostivanin/OTPClient/archive/v1.0.6.tar.gz",
+          "sha256": "79967a4f499b61155b8abb2df71ac4ef4df94311c64864e95c7beb725ed18c53"
         }
       ]
     }
