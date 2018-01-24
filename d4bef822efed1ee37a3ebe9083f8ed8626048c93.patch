@@ -1,0 +1,22 @@
+From d4bef822efed1ee37a3ebe9083f8ed8626048c93 Mon Sep 17 00:00:00 2001
+From: TingPing <tingping@tingping.se>
+Date: Wed, 24 Jan 2018 10:01:16 -0500
+Subject: [PATCH] Fix appdata id
+
+---
+ data/com.github.paolostivanin.OTPClient.appdata.xml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/data/com.github.paolostivanin.OTPClient.appdata.xml b/data/com.github.paolostivanin.OTPClient.appdata.xml
+index 0416947..18faca8 100644
+--- a/data/com.github.paolostivanin.OTPClient.appdata.xml
++++ b/data/com.github.paolostivanin.OTPClient.appdata.xml
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <!-- Copyright 2017 Paolo Stivanin <info@paolostivanin.com> -->
+ <component type="desktop-application">
+-  <id>com.paolostivanin.OTPClient</id>
++  <id>com.github.paolostivanin.OTPClient</id>
+   <metadata_license>CC-BY-4.0</metadata_license>
+   <project_license>GPL-3.0+</project_license>
+   <name>OTPClient</name>

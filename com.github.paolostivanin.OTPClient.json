@@ -71,6 +71,10 @@
           "type": "archive",
           "url": "https://github.com/paolostivanin/OTPClient/archive/v1.0.6.tar.gz",
           "sha256": "1f213de12d09c512944a2d13550e9e2439cbe638302b7eb54c75f93bb3451e07"
+        },
+        {
+          "type": "patch",
+          "path": "d4bef822efed1ee37a3ebe9083f8ed8626048c93.patch"
         }
       ]
     }
