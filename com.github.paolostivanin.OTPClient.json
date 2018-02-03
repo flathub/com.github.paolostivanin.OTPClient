@@ -34,6 +34,23 @@
       ]
     },
     {
+      "name": "jansson",
+      "cleanup": [
+        "/include",
+        "/bin",
+        "/share",
+        "/lib/pkgconfig",
+        "/lib/*.la"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "http://www.digip.org/jansson/releases/jansson-2.10.tar.gz",
+          "sha256": "78215ad1e277b42681404c1d66870097a50eb084be9d771b1d15576575cf6447"
+        }
+      ]
+    },
+    {
       "name": "libbaseencode",
       "buildsystem": "cmake-ninja",
       "config-opts": ["-DCMAKE_BUILD_TYPE=Release"],
