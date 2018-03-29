@@ -28,8 +28,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://libzip.org/download/libzip-1.4.0.tar.xz",
-          "sha256": "e508aba025f5f94b267d5120fc33761bcd98440ebe49dbfe2ed3df3afeacc7b1"
+          "url": "https://libzip.org/download/libzip-1.5.0.tar.xz",
+          "sha256": "fd320f57a7de2f729aa6948a9487530e57e0ca8e4ef6b4e418b525a635ab689c"
         }
       ]
     },
@@ -45,8 +45,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "http://www.digip.org/jansson/releases/jansson-2.10.tar.gz",
-          "sha256": "78215ad1e277b42681404c1d66870097a50eb084be9d771b1d15576575cf6447"
+          "url": "http://www.digip.org/jansson/releases/jansson-2.11.tar.gz",
+          "sha256": "6e85f42dabe49a7831dbdd6d30dca8a966956b51a9a50ed534b82afc3fa5b2f4"
         }
       ]
     },
@@ -87,8 +87,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/paolostivanin/OTPClient/archive/v1.1.0.tar.gz",
-          "sha256": "cf93aa21db03e821bd987e4471e1f35fae5c846cc8482249c589ba51969cdc30"
+          "url": "https://github.com/paolostivanin/OTPClient/archive/v1.1.1.tar.gz",
+          "sha256": "e98e6257016c2564af590445c5511ed1076cc5c985d196cd71bcfc478975de85"
         }
       ]
     }
