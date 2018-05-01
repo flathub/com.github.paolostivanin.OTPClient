@@ -1,7 +1,7 @@
 {
   "app-id": "com.github.paolostivanin.OTPClient",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "3.26",
+  "runtime-version": "3.28",
   "sdk": "org.gnome.Sdk",
   "command": "otpclient",
   "finish-args": [
@@ -10,7 +10,10 @@
     "--socket=wayland",
     "--filesystem=xdg-run/dconf",
     "--filesystem=~/.config/dconf:ro",
+    /* needed for webcam access */
+    "--device=all",
     "--talk-name=ca.desrt.dconf",
+    "--talk-name=org.gnome.Shell.Screenshot",
     "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
   ],
   "modules": [
@@ -28,8 +31,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://libzip.org/download/libzip-1.5.0.tar.xz",
-          "sha256": "5ddb9b41d31b2f99ad4d512003c610ae2db70e222833aba6f9332d5b48a153d9"
+          "url": "https://libzip.org/download/libzip-1.5.1.tar.xz",
+          "sha256": "04ea35b6956c7b3453f1ed3f3fe40e3ddae1f43931089124579e8384e79ed372"
         }
       ]
     },
@@ -47,6 +50,22 @@
           "type": "archive",
           "url": "http://www.digip.org/jansson/releases/jansson-2.11.tar.gz",
           "sha256": "6e85f42dabe49a7831dbdd6d30dca8a966956b51a9a50ed534b82afc3fa5b2f4"
+        }
+      ]
+    },
+    {
+      "name": "zbar",
+      "config-opts": [
+        "--without-qt",
+        "--without-gtk",
+        "--without-xv",
+        "--without-imagemagick",
+        "--enable-codes=qrcode"
+      ],
+      "sources": [{
+          "type": "archive",
+          "url": "https://www.linuxtv.org/downloads/zbar/zbar-0.20.tar.bz2",
+          "sha256": "b92a130744c907905eb61479a03036569045a08693535c9b630c591ea13ee620"
         }
       ]
     },
@@ -87,8 +106,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/paolostivanin/OTPClient/archive/v1.1.1.tar.gz",
-          "sha256": "bdcfc1bcbc2bbb35bb9c49dc4807a65e724459369d1256267b6143efba54c785"
+          "url": "https://github.com/paolostivanin/OTPClient/archive/v1.2.0.tar.gz",
+          "sha256": "cb7b04d9e38d6ecbc8f1cbaa4c7d319869d68a9d7c76122645d249ec3899c048"
         }
       ]
     }
