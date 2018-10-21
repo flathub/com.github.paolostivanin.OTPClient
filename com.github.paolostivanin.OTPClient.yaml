@@ -1,0 +1,94 @@
+app-id: com.github.paolostivanin.OTPClient
+runtime: org.gnome.Platform
+runtime-version: '3.30'
+sdk: org.gnome.Sdk
+command: otpclient
+finish-args:
+- "--share=ipc"
+- "--socket=x11"
+- "--socket=wayland"
+- "--filesystem=xdg-run/dconf"
+- "--filesystem=~/.config/dconf:ro"
+- "--device=all"
+- "--talk-name=ca.desrt.dconf"
+- "--talk-name=org.gnome.Shell.Screenshot"
+- "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+modules:
+- name: libzip
+  buildsystem: cmake-ninja
+  config-opts:
+  - "-DCMAKE_BUILD_TYPE=Release"
+  - "-DCMAKE_INSTALL_LIBDIR=lib"
+  cleanup:
+  - "/include"
+  - "/bin"
+  - "/share"
+  - "/lib/pkgconfig"
+  - "/lib/*.la"
+  sources:
+  - type: archive
+    url: https://libzip.org/download/libzip-1.5.1.tar.xz
+    sha256: 04ea35b6956c7b3453f1ed3f3fe40e3ddae1f43931089124579e8384e79ed372
+- name: jansson
+  cleanup:
+  - "/include"
+  - "/bin"
+  - "/share"
+  - "/lib/pkgconfig"
+  - "/lib/*.la"
+  sources:
+  - type: archive
+    url: http://www.digip.org/jansson/releases/jansson-2.11.tar.gz
+    sha256: 6e85f42dabe49a7831dbdd6d30dca8a966956b51a9a50ed534b82afc3fa5b2f4
+- name: zbar
+  config-opts:
+  - "--without-qt"
+  - "--without-qt5"
+  - "--without-gtk"
+  - "--without-xv"
+  - "--without-imagemagick"
+  - "--without-python2"
+  - "--enable-codes=qrcode"
+  sources:
+  - type: script
+    dest-filename: autogen.sh
+    commands:
+    - "autoreconf -vfi -W none"
+  - type: archive
+    url: https://www.linuxtv.org/downloads/zbar/zbar-0.20.1.tar.bz2
+    sha256: a0081a9b473d9e44e029d948a8d7f22deb1bf128980f3fc4e185298066e62a6c
+  - type: shell
+    # avoid building documentation
+    commands:
+    - "sed -i '48d' Makefile.am"
+- name: libbaseencode
+  buildsystem: cmake-ninja
+  config-opts:
+  - "-DCMAKE_BUILD_TYPE=Release"
+  - "-DCMAKE_INSTALL_LIBDIR=lib"
+  cleanup:
+  - "/include"
+  sources:
+  - type: archive
+    url: https://github.com/paolostivanin/libbaseencode/archive/v1.0.9.tar.gz
+    sha256: a183d7cf30d931b2a078d6f0ef64616b71ab26f9258e5f4e191778c7ace7175d
+- name: libcotp
+  buildsystem: cmake-ninja
+  config-opts:
+  - "-DCMAKE_BUILD_TYPE=Release"
+  - "-DCMAKE_INSTALL_LIBDIR=lib"
+  cleanup:
+  - "/include"
+  sources:
+  - type: archive
+    url: https://github.com/paolostivanin/libcotp/archive/v1.2.1.tar.gz
+    sha256: 52ea9d876d8465aad666bdb38a59d85f183a0e8d2aa14b14d07e4e6bc471648e
+- name: OTPClient
+  buildsystem: cmake-ninja
+  config-opts:
+  - "-DCMAKE_BUILD_TYPE=Release"
+  - "-DUSE_FLATPAK_APP_FOLDER=ON"
+  sources:
+  - type: git
+    url: https://github.com/paolostivanin/OTPClient.git
+    branch: master
