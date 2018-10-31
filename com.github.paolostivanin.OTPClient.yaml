@@ -89,6 +89,6 @@ modules:
   - "-DCMAKE_BUILD_TYPE=Release"
   - "-DUSE_FLATPAK_APP_FOLDER=ON"
   sources:
-  - type: git
-    url: https://github.com/paolostivanin/OTPClient.git
-    branch: master
+  - type: archive
+    url: https://github.com/paolostivanin/otpclient/archive/v1.3.1.tar.gz
+    sha256: 7fbf8e1c182a723af0fe9869735c787eb526c1f380500d0c248ef775d1eaec11
