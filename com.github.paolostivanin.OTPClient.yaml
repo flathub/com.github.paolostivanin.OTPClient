@@ -38,8 +38,8 @@ modules:
   - "/lib/*.la"
   sources:
   - type: archive
-    url: http://www.digip.org/jansson/releases/jansson-2.11.tar.gz
-    sha256: 6e85f42dabe49a7831dbdd6d30dca8a966956b51a9a50ed534b82afc3fa5b2f4
+    url: http://www.digip.org/jansson/releases/jansson-2.12.tar.gz
+    sha256: 5f8dec765048efac5d919aded51b26a32a05397ea207aa769ff6b53c7027d2c9
 - name: zbar
   config-opts:
   - "--without-qt"
@@ -81,8 +81,8 @@ modules:
   - "/include"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/libcotp/archive/v1.2.1.tar.gz
-    sha256: 52ea9d876d8465aad666bdb38a59d85f183a0e8d2aa14b14d07e4e6bc471648e
+    url: https://github.com/paolostivanin/libcotp/archive/v1.2.2.tar.gz
+    sha256: 25b45ffa4aece5cc689503ebea7356a2f760c194f0c41805934495d2fe7165b1
 - name: OTPClient
   buildsystem: cmake-ninja
   config-opts:
@@ -90,5 +90,5 @@ modules:
   - "-DUSE_FLATPAK_APP_FOLDER=ON"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/otpclient/archive/v1.3.1.tar.gz
-    sha256: 7fbf8e1c182a723af0fe9869735c787eb526c1f380500d0c248ef775d1eaec11
+    url: https://github.com/paolostivanin/otpclient/archive/v1.4.0.tar.gz
+    sha256: f8f814653f3301efc86409530439f86652a6d500d6615eab28b60a219bbf3e17
