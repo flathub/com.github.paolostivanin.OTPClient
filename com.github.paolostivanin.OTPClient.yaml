@@ -27,8 +27,8 @@ modules:
   - "/lib/*.la"
   sources:
   - type: archive
-    url: https://libzip.org/download/libzip-1.5.1.tar.xz
-    sha256: 04ea35b6956c7b3453f1ed3f3fe40e3ddae1f43931089124579e8384e79ed372
+    url: https://libzip.org/download/libzip-1.5.2.tar.xz
+    sha256: b3de4d4bd49a01e0cab3507fc163f88e1651695b6b9cb25ad174dbe319d4a3b4
 - name: jansson
   cleanup:
   - "/include"
@@ -55,8 +55,8 @@ modules:
     commands:
     - "autoreconf -vfi -W none"
   - type: archive
-    url: https://www.linuxtv.org/downloads/zbar/zbar-0.20.1.tar.bz2
-    sha256: a0081a9b473d9e44e029d948a8d7f22deb1bf128980f3fc4e185298066e62a6c
+    url: https://www.linuxtv.org/downloads/zbar/zbar-0.23.tar.gz
+    sha256: ac52763a7dd6ddc53ca6cd75ccee14f7abf6ae46ecb31137d025af123edd33bf
   - type: shell
     # avoid building documentation
     commands:
@@ -90,5 +90,5 @@ modules:
   - "-DUSE_FLATPAK_APP_FOLDER=ON"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/otpclient/archive/v1.4.1.tar.gz
-    sha256: 67ffd03e866a2184896b99d385a95c181e2e84d371276723297d136683a0fa93
+    url: https://github.com/paolostivanin/otpclient/archive/v1.5.0.tar.gz
+    sha256: 50649ad45c7047a46fcc0b5f41f0f639223e7b41ce3a8a8a24f5c811ba760acd
