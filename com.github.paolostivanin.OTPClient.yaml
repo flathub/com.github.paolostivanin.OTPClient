@@ -47,20 +47,13 @@ modules:
   - "--without-gtk"
   - "--without-xv"
   - "--without-imagemagick"
-  - "--without-python2"
+  - "--with-python=python3"
+  - "--disable-doc"
   - "--enable-codes=qrcode"
   sources:
-  - type: script
-    dest-filename: autogen.sh
-    commands:
-    - "autoreconf -vfi -W none"
   - type: archive
     url: https://www.linuxtv.org/downloads/zbar/zbar-0.23.tar.gz
     sha256: ac52763a7dd6ddc53ca6cd75ccee14f7abf6ae46ecb31137d025af123edd33bf
-  - type: shell
-    # avoid building documentation
-    commands:
-    - "sed -i '48d' Makefile.am"
 - name: libbaseencode
   buildsystem: cmake-ninja
   config-opts:
