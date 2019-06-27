@@ -47,6 +47,7 @@ modules:
   - "--without-gtk"
   - "--without-xv"
   - "--without-imagemagick"
+  - "--without-dbus"
   - "--with-python=python3"
   - "--disable-doc"
   - "--enable-codes=qrcode"
