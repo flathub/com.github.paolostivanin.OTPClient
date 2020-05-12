@@ -38,8 +38,8 @@ modules:
   - "/lib/*.la"
   sources:
   - type: archive
-    url: http://www.digip.org/jansson/releases/jansson-2.12.tar.gz
-    sha256: 5f8dec765048efac5d919aded51b26a32a05397ea207aa769ff6b53c7027d2c9
+    url: http://www.digip.org/jansson/releases/jansson-2.13.1.tar.gz
+    sha256: f4f377da17b10201a60c1108613e78ee15df6b12016b116b6de42209f47a474f
 - name: zbar
   config-opts:
   - "--without-qt"
@@ -84,5 +84,5 @@ modules:
   - "-DUSE_FLATPAK_APP_FOLDER=ON"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/otpclient/archive/v2.2.1.tar.gz
-    sha256: d9b02517ad571a7d9aca09c6650853e9a3bc4ef70cbe05e75b7b03196e486459
+    url: https://github.com/paolostivanin/otpclient/archive/v2.3.0.tar.gz
+    sha256: c7a7e96675b4552b26e6d47372a8f4bc6dbb18834161d85a3aecf3beab4ef7e6
