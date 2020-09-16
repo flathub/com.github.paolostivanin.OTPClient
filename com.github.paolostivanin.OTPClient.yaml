@@ -27,8 +27,8 @@ modules:
   - "/lib/*.la"
   sources:
   - type: archive
-    url: https://libzip.org/download/libzip-1.6.1.tar.xz
-    sha256: 705dac7a671b3f440181481e607b0908129a9cf1ddfcba75d66436c0e7d33641
+    url: https://libzip.org/download/libzip-1.7.3.tar.xz
+    sha256: a60473ffdb7b4260c08bfa19c2ccea0438edac11193c3afbbb1f17fbcf6c6132
 - name: jansson
   cleanup:
   - "/include"
@@ -53,8 +53,8 @@ modules:
   - "--enable-codes=qrcode"
   sources:
   - type: archive
-    url: https://www.linuxtv.org/downloads/zbar/zbar-0.23.tar.gz
-    sha256: ac52763a7dd6ddc53ca6cd75ccee14f7abf6ae46ecb31137d025af123edd33bf
+    url: https://www.linuxtv.org/downloads/zbar/zbar-0.23.1.tar.gz
+    sha256: c72b19eb63f48781ae5ff1830236f4e753f4bd6418cd781aea1cd85d625b119e
 - name: libbaseencode
   buildsystem: cmake-ninja
   config-opts:
