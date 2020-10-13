@@ -9,7 +9,6 @@ finish-args:
 - "--socket=wayland"
 - "--device=all"
 - "--talk-name=org.gnome.Shell.Screenshot"
-- "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
 - "--metadata=X-DConf=migrate-path=/com/github/paolostivanin/OTPClient"
 modules:
 - name: libzip
