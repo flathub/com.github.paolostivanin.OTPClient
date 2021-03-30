@@ -1,6 +1,6 @@
 app-id: com.github.paolostivanin.OTPClient
 runtime: org.gnome.Platform
-runtime-version: '3.38'
+runtime-version: '40'
 sdk: org.gnome.Sdk
 command: otpclient
 finish-args:
@@ -81,5 +81,5 @@ modules:
   - "-DUSE_FLATPAK_APP_FOLDER=ON"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/otpclient/archive/v2.4.3.tar.gz
-    sha256: 0c8614ca81374541fc29520a247d938c6b519bd24e65d341309cf13756a0f3f2
+    url: https://github.com/paolostivanin/otpclient/archive/v2.4.4.tar.gz
+    sha256: 5b976782906f15e2a4e001d73909a05f6146010cea83d78e3ad5c850f4049da4
