@@ -1,6 +1,6 @@
 app-id: com.github.paolostivanin.OTPClient
 runtime: org.gnome.Platform
-runtime-version: '40'
+runtime-version: '41'
 sdk: org.gnome.Sdk
 command: otpclient
 finish-args:
@@ -24,8 +24,8 @@ modules:
   - "/lib/*.la"
   sources:
   - type: archive
-    url: https://libzip.org/download/libzip-1.7.3.tar.xz
-    sha256: a60473ffdb7b4260c08bfa19c2ccea0438edac11193c3afbbb1f17fbcf6c6132
+    url: https://libzip.org/download/libzip-1.8.0.tar.xz
+    sha256: f0763bda24ba947e80430be787c4b068d8b6aa6027a26a19923f0acfa3dac97e
 - name: jansson
   cleanup:
   - "/include"
@@ -61,8 +61,8 @@ modules:
   - "/include"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/libbaseencode/archive/v1.0.9.tar.gz
-    sha256: a183d7cf30d931b2a078d6f0ef64616b71ab26f9258e5f4e191778c7ace7175d
+    url: https://github.com/paolostivanin/libbaseencode/archive/v1.0.12.tar.gz
+    sha256: ee9d4cc198d48365633274f41bd1b0eae12f9bef49182ea20050aa68f60e09b6
 - name: libcotp
   buildsystem: cmake-ninja
   config-opts:
@@ -72,8 +72,8 @@ modules:
   - "/include"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/libcotp/archive/v1.2.2.tar.gz
-    sha256: 25b45ffa4aece5cc689503ebea7356a2f760c194f0c41805934495d2fe7165b1
+    url: https://github.com/paolostivanin/libcotp/archive/v1.2.4.tar.gz
+    sha256: 6a077c6a8e785a542262f207fbb760f3d7d03649787c10cb01ea38c280dda070
 - name: OTPClient
   buildsystem: cmake-ninja
   config-opts:
