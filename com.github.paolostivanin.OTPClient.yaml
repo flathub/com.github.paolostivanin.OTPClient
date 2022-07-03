@@ -8,6 +8,7 @@ finish-args:
 - "--socket=x11"
 - "--socket=wayland"
 - "--device=all"
+- "--talk-name=org.freedesktop.secrets"
 modules:
 - name: libzip
   buildsystem: cmake-ninja
@@ -22,8 +23,8 @@ modules:
   - "/lib/*.la"
   sources:
   - type: archive
-    url: https://libzip.org/download/libzip-1.8.0.tar.xz
-    sha256: f0763bda24ba947e80430be787c4b068d8b6aa6027a26a19923f0acfa3dac97e
+    url: https://libzip.org/download/libzip-1.9.2.tar.xz
+    sha256: c93e9852b7b2dc931197831438fee5295976ee0ba24f8524a8907be5c2ba5937
 - name: jansson
   cleanup:
   - "/include"
@@ -35,6 +36,29 @@ modules:
   - type: archive
     url: https://github.com/akheron/jansson/releases/download/v2.14/jansson-2.14.tar.gz
     sha256: 5798d010e41cf8d76b66236cfb2f2543c8d082181d16bc3085ab49538d4b9929
+- shared-modules/libsecret/libsecret.json
+- name: protobuf
+  cleanup:
+  - "/include"
+  - "/bin"
+  - "/share"
+  - "/lib/pkgconfig"
+  - "/lib/*.la"
+  sources:
+  - type: archive
+    url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.2.tar.gz
+    sha256: ca983c9d2c8f8c935513642bcc4b2cbc64e4046e0bb16bf2ff893128577ece8c
+- name: protobuf-c
+  cleanup:
+  - "/include"
+  - "/bin"
+  - "/share"
+  - "/lib/pkgconfig"
+  - "/lib/*.la"
+  sources:
+  - type: archive
+    url: https://github.com/protobuf-c/protobuf-c/archive/refs/tags/v1.4.0.tar.gz
+    sha256: 1068bca1e9870e9492096f97c409cd15f10c5019c183e52ec6d53e8d18630cbf
 - name: zbar
   config-opts:
   - "--without-qt"
@@ -59,8 +83,8 @@ modules:
   - "/include"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/libbaseencode/archive/v1.0.12.tar.gz
-    sha256: ee9d4cc198d48365633274f41bd1b0eae12f9bef49182ea20050aa68f60e09b6
+    url: https://github.com/paolostivanin/libbaseencode/archive/v1.0.14.tar.gz
+    sha256: bc95a64507b4ac359eec1f858a6bdcf84c9562424d40fbea8ab00021e9b3197c
 - name: libcotp
   buildsystem: cmake-ninja
   config-opts:
@@ -70,8 +94,8 @@ modules:
   - "/include"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/libcotp/archive/v1.2.4.tar.gz
-    sha256: 6a077c6a8e785a542262f207fbb760f3d7d03649787c10cb01ea38c280dda070
+    url: https://github.com/paolostivanin/libcotp/archive/v1.2.6.tar.gz
+    sha256: f0e75c8bd27a16e808e0af7768dc100872f26dd7c64534ce971c407374386d4a
 - name: OTPClient
   buildsystem: cmake-ninja
   config-opts:
@@ -79,5 +103,5 @@ modules:
   - "-DUSE_FLATPAK_APP_FOLDER=ON"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/otpclient/archive/v2.5.1.tar.gz
-    sha256: e35d4c004abc523428b9d40f01e18153d87e38073c2bd56ac855ecdcec14d47c
+    url: https://github.com/paolostivanin/otpclient/archive/v2.6.0.tar.gz
+    sha256: db4bbd9504cdf6b5dcfec08cdebd07b17f9fb491fa4776fbaea39fa7a03a75fe
