@@ -103,5 +103,5 @@ modules:
   - "-DUSE_FLATPAK_APP_FOLDER=ON"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/otpclient/archive/v2.6.1.tar.gz
-    sha256: 4770606400c23016ea83baf24c1b65a6e7a39dca6a267fa3a2711717b4c6fae0
+    url: https://github.com/paolostivanin/otpclient/archive/v2.6.2.tar.gz
+    sha256: c57db3e7c157eebf84b4af61fd65c70417a26675531e2d972101b9e875cea4a4
