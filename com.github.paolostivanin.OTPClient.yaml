@@ -10,21 +10,6 @@ finish-args:
 - "--device=all"
 - "--talk-name=org.freedesktop.secrets"
 modules:
-- name: libzip
-  buildsystem: cmake-ninja
-  config-opts:
-  - "-DCMAKE_BUILD_TYPE=Release"
-  - "-DCMAKE_INSTALL_LIBDIR=lib"
-  cleanup:
-  - "/include"
-  - "/bin"
-  - "/share"
-  - "/lib/pkgconfig"
-  - "/lib/*.la"
-  sources:
-  - type: archive
-    url: https://libzip.org/download/libzip-1.9.2.tar.xz
-    sha256: c93e9852b7b2dc931197831438fee5295976ee0ba24f8524a8907be5c2ba5937
 - name: jansson
   cleanup:
   - "/include"
@@ -46,8 +31,8 @@ modules:
   - "/lib/*.la"
   sources:
   - type: archive
-    url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.2.tar.gz
-    sha256: ca983c9d2c8f8c935513642bcc4b2cbc64e4046e0bb16bf2ff893128577ece8c
+    url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.12.tar.gz
+    sha256: 22fdaf641b31655d4b2297f9981fa5203b2866f8332d3c6333f6b0107bb320de
 - name: protobuf-c
   cleanup:
   - "/include"
@@ -57,8 +42,17 @@ modules:
   - "/lib/*.la"
   sources:
   - type: archive
-    url: https://github.com/protobuf-c/protobuf-c/archive/refs/tags/v1.4.0.tar.gz
-    sha256: 1068bca1e9870e9492096f97c409cd15f10c5019c183e52ec6d53e8d18630cbf
+    url: https://github.com/protobuf-c/protobuf-c/archive/refs/tags/v1.4.1.tar.gz
+    sha256: 99be336cdb15dfc5827efe34e5ac9aaa962e2485db547dd254d2a122a7d23102
+- name: qrencode
+  buildsystem: cmake-ninja
+  config-opts:
+  - "-DCMAKE_BUILD_TYPE=Release"
+  - "-DBUILD_SHARED_LIBS=TRUE"
+  sources:
+  - type: archive
+    url: https://github.com/fukuchi/libqrencode/archive/refs/tags/v4.1.1.tar.gz
+    sha256: 5385bc1b8c2f20f3b91d258bf8ccc8cf62023935df2d2676b5b67049f31a049c
 - name: zbar
   config-opts:
   - "--without-qt"
@@ -103,5 +97,5 @@ modules:
   - "-DUSE_FLATPAK_APP_FOLDER=ON"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/otpclient/archive/v2.6.4.tar.gz
-    sha256: 91ff757948c3d1c714ad3fb192175f67d15666d8b416dc40f2863559d388ee03
+    url: https://github.com/paolostivanin/otpclient/archive/v3.1.0.tar.gz
+    sha256: d1a29a8eb60121a368d75b6b3fa2e6b86a8a633ae20baf9d818dfb16917c8276
