@@ -68,17 +68,6 @@ modules:
   - type: archive
     url: https://www.linuxtv.org/downloads/zbar/zbar-0.23.90.tar.gz
     sha256: ff857dd7e3dbe043dac3765b5182c91dfd0477800713a75d15287d797cee60fa
-- name: libbaseencode
-  buildsystem: cmake-ninja
-  config-opts:
-  - "-DCMAKE_BUILD_TYPE=Release"
-  - "-DCMAKE_INSTALL_LIBDIR=lib"
-  cleanup:
-  - "/include"
-  sources:
-  - type: archive
-    url: https://github.com/paolostivanin/libbaseencode/archive/v1.0.14.tar.gz
-    sha256: bc95a64507b4ac359eec1f858a6bdcf84c9562424d40fbea8ab00021e9b3197c
 - name: libcotp
   buildsystem: cmake-ninja
   config-opts:
@@ -88,8 +77,8 @@ modules:
   - "/include"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/libcotp/archive/v1.2.6.tar.gz
-    sha256: f0e75c8bd27a16e808e0af7768dc100872f26dd7c64534ce971c407374386d4a
+    url: https://github.com/paolostivanin/libcotp/archive/v2.0.0.tar.gz
+    sha256: 9391244cdcbe5a871230bd9da434b415c25e3ed49fd53f482ef6c0721a12d405
 - name: OTPClient
   buildsystem: cmake-ninja
   config-opts:
@@ -97,5 +86,5 @@ modules:
   - "-DUSE_FLATPAK_APP_FOLDER=ON"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/otpclient/archive/v3.1.3.tar.gz
-    sha256: 8f3702e70990611590988930154cd9c4f84879fbe2f10357be850ab5a168a18b
+    url: https://github.com/paolostivanin/otpclient/archive/v3.1.4.tar.gz
+    sha256: 3b2dfe6ebc3c1e30061bffdd60323f816f1963c090f7498adb6b96aa0318d753
