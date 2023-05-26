@@ -77,8 +77,8 @@ modules:
   - "/include"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/libcotp/archive/v2.0.0.tar.gz
-    sha256: 9391244cdcbe5a871230bd9da434b415c25e3ed49fd53f482ef6c0721a12d405
+    url: https://github.com/paolostivanin/libcotp/archive/v2.0.1.tar.gz
+    sha256: b111d528bbde7c1a0a392f49293b25ae33e6e78fbcbe378e0cf8bc6d59743d11
 - name: OTPClient
   buildsystem: cmake-ninja
   config-opts:
@@ -86,5 +86,5 @@ modules:
   - "-DUSE_FLATPAK_APP_FOLDER=ON"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/otpclient/archive/v3.1.6.tar.gz
-    sha256: ef82c0ec51ad1f9f108a1b0e919e128d8f6e07852cec3f919ba25aace266de94
+    url: https://github.com/paolostivanin/otpclient/archive/v3.1.7.tar.gz
+    sha256: 67a77ba684994ab3c75c7e137f0a7680293c3b7eb2814317535a3667bf8553d4
