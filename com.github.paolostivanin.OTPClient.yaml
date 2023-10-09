@@ -1,6 +1,6 @@
 app-id: com.github.paolostivanin.OTPClient
 runtime: org.gnome.Platform
-runtime-version: '44'
+runtime-version: '45'
 sdk: org.gnome.Sdk
 command: otpclient
 finish-args:
@@ -9,6 +9,7 @@ finish-args:
 - "--socket=wayland"
 - "--device=all"
 - "--talk-name=org.freedesktop.secrets"
+- "--unshare=network"
 modules:
 - name: jansson
   cleanup:
@@ -68,6 +69,8 @@ modules:
   - type: archive
     url: https://www.linuxtv.org/downloads/zbar/zbar-0.23.90.tar.gz
     sha256: ff857dd7e3dbe043dac3765b5182c91dfd0477800713a75d15287d797cee60fa
+  - type: patch
+    path: py311.patch
 - name: libcotp
   buildsystem: cmake-ninja
   config-opts:
