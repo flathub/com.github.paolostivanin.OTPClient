@@ -9,7 +9,6 @@ finish-args:
 - "--socket=wayland"
 - "--device=all"
 - "--talk-name=org.freedesktop.secrets"
-- "--unshare=network"
 modules:
 - name: jansson
   cleanup:
@@ -43,8 +42,8 @@ modules:
   - "/lib/*.la"
   sources:
   - type: archive
-    url: https://github.com/protobuf-c/protobuf-c/archive/refs/tags/v1.4.1.tar.gz
-    sha256: 99be336cdb15dfc5827efe34e5ac9aaa962e2485db547dd254d2a122a7d23102
+    url: https://github.com/protobuf-c/protobuf-c/archive/refs/tags/v1.5.0.tar.gz
+    sha256: d4cb022d55f49796959b07a9d83040822e39129bc0eb28f4e8301da17d758f62
 - name: qrencode
   buildsystem: cmake-ninja
   config-opts:
@@ -67,10 +66,8 @@ modules:
   - "--enable-codes=qrcode"
   sources:
   - type: archive
-    url: https://www.linuxtv.org/downloads/zbar/zbar-0.23.90.tar.gz
-    sha256: ff857dd7e3dbe043dac3765b5182c91dfd0477800713a75d15287d797cee60fa
-  - type: patch
-    path: py311.patch
+    url: https://www.linuxtv.org/downloads/zbar/zbar-0.23.93.tar.gz
+    sha256: 78ae427a529f0399561bc198de5c2c7ca3f11d05fa9e903e65e501168433d218
 - name: libcotp
   buildsystem: cmake-ninja
   config-opts:
@@ -80,8 +77,8 @@ modules:
   - "/include"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/libcotp/archive/v2.0.1.tar.gz
-    sha256: b111d528bbde7c1a0a392f49293b25ae33e6e78fbcbe378e0cf8bc6d59743d11
+    url: https://github.com/paolostivanin/libcotp/archive/v3.0.0.tar.gz
+    sha256: ff0b9ce208c4c6542a0f1e739cf31978fbf28848c573837c671a6cb7b56b2c12
 - name: OTPClient
   buildsystem: cmake-ninja
   config-opts:
@@ -89,5 +86,5 @@ modules:
   - "-DUSE_FLATPAK_APP_FOLDER=ON"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/otpclient/archive/v3.2.1.tar.gz
-    sha256: f926155ef104e4965561e668a2e5128cdb7ed19af49ba7e693b580883fdae048
+    url: https://github.com/paolostivanin/otpclient/archive/v3.5.0.tar.gz
+    sha256: 3b032dc185365e2fef6cf2231d5aeb1e6e81cdc12ec4f8a9b3573f77b283945f
