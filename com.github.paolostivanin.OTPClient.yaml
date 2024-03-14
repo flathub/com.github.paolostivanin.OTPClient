@@ -83,8 +83,8 @@ modules:
   buildsystem: cmake-ninja
   config-opts:
   - "-DCMAKE_BUILD_TYPE=Release"
-  - "-DUSE_FLATPAK_APP_FOLDER=ON"
+  - "-DIS_FLATPAK=ON"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/otpclient/archive/v3.5.2.tar.gz
-    sha256: d65363003d497a59ebc7d48c142541ae9a787bc16dddce87fb7b77d9fdbf6ccf
+    url: https://github.com/paolostivanin/otpclient/archive/v3.6.0.tar.gz
+    sha256: e5a4e848be12b761e632e070149f7999974b4ce7620cb92a05a0dd149822beec
