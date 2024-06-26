@@ -1,6 +1,6 @@
 app-id: com.github.paolostivanin.OTPClient
 runtime: org.gnome.Platform
-runtime-version: '45'
+runtime-version: '46'
 sdk: org.gnome.Sdk
 command: otpclient
 finish-args:
@@ -9,6 +9,8 @@ finish-args:
 - "--socket=wayland"
 - "--device=all"
 - "--talk-name=org.freedesktop.secrets"
+- "--talk-name=org.gtk.vfs.*"
+- "--filesystem=xdg-run/gvfsd"
 modules:
 - name: jansson
   cleanup:
@@ -22,7 +24,10 @@ modules:
     url: https://github.com/akheron/jansson/releases/download/v2.14/jansson-2.14.tar.gz
     sha256: 5798d010e41cf8d76b66236cfb2f2543c8d082181d16bc3085ab49538d4b9929
 - shared-modules/libsecret/libsecret.json
-- name: protobuf
+- name: abseil-cpp
+  buildsystem: cmake-ninja
+  config-opts:
+  - "-DCMAKE_BUILD_TYPE=Release"
   cleanup:
   - "/include"
   - "/bin"
@@ -31,8 +36,24 @@ modules:
   - "/lib/*.la"
   sources:
   - type: archive
-    url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.12.tar.gz
-    sha256: 22fdaf641b31655d4b2297f9981fa5203b2866f8332d3c6333f6b0107bb320de
+    url: https://github.com/abseil/abseil-cpp/releases/download/20240116.2/abseil-cpp-20240116.2.tar.gz
+    sha256: 733726b8c3a6d39a4120d7e45ea8b41a434cdacde401cba500f14236c49b39dc
+- name: protobuf
+  buildsystem: cmake-ninja
+  config-opts:
+  - "-DCMAKE_BUILD_TYPE=Release"
+  - "-Dprotobuf_BUILD_TESTS=OFF"
+  - "-Dprotobuf_ABSL_PROVIDER=package"
+  cleanup:
+  - "/include"
+  - "/bin"
+  - "/share"
+  - "/lib/pkgconfig"
+  - "/lib/*.la"
+  sources:
+  - type: archive
+    url: https://github.com/protocolbuffers/protobuf/releases/download/v25.2/protobuf-25.2.tar.gz
+    sha256: 8ff511a64fc46ee792d3fe49a5a1bcad6f7dc50dfbba5a28b0e5b979c17f9871
 - name: protobuf-c
   cleanup:
   - "/include"
