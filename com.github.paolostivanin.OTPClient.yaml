@@ -107,5 +107,5 @@ modules:
   - "-DIS_FLATPAK=ON"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/otpclient/archive/v4.0.1.tar.gz
-    sha256: 4058f71928dd808b928713b998491896c0ca223b43bdf3ff9f9f6257a410cc88
+    url: https://github.com/paolostivanin/otpclient/archive/v4.0.2.tar.gz
+    sha256: b5666983c30f775b2b95413b441c6e2c6ad98ed1dbe0d2973647a511af50f224
