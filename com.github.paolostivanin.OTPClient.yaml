@@ -108,4 +108,4 @@ modules:
   sources:
   - type: archive
     url: https://github.com/paolostivanin/otpclient/archive/v4.1.1.tar.gz
-    sha256: d74b387b98f58d8604215d58bbd29c8c5f8d7753519325b69d38ee1334b4a13f
+    sha256: 5f0e3954fbe6f88c006478ea03ac690b22fb7d752d82f83bdf2c770c1550d5aa
