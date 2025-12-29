@@ -1,0 +1,8 @@
+--- libqrencode-4.1.1/CMakeLists.txt.orig	2025-12-29 15:41:54.371876206 +0100
++++ libqrencode-4.1.1/CMakeLists.txt	2025-12-29 15:41:59.625906582 +0100
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.1.0)
++cmake_minimum_required(VERSION 3.12.0)
+ 
+ project(QRencode VERSION 4.1.1 LANGUAGES C)
+ 
