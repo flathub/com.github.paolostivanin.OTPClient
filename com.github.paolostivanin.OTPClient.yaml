@@ -23,20 +23,7 @@ modules:
   - type: archive
     url: https://github.com/akheron/jansson/releases/download/v2.14/jansson-2.14.tar.gz
     sha256: 5798d010e41cf8d76b66236cfb2f2543c8d082181d16bc3085ab49538d4b9929
-- name: abseil-cpp
-  buildsystem: cmake-ninja
-  config-opts:
-  - "-DCMAKE_BUILD_TYPE=Release"
-  cleanup:
-  - "/include"
-  - "/bin"
-  - "/share"
-  - "/lib/pkgconfig"
-  - "/lib/*.la"
-  sources:
-  - type: archive
-    url: https://github.com/abseil/abseil-cpp/releases/download/20250814.1/abseil-cpp-20250814.1.tar.gz
-    sha256: 1692f77d1739bacf3f94337188b78583cf09bab7e420d2dc6c5605a4f86785a1
+
 - name: protobuf
   buildsystem: cmake-ninja
   config-opts:
@@ -53,6 +40,7 @@ modules:
   - type: archive
     url: https://github.com/protocolbuffers/protobuf/releases/download/v25.2/protobuf-25.2.tar.gz
     sha256: 8ff511a64fc46ee792d3fe49a5a1bcad6f7dc50dfbba5a28b0e5b979c17f9871
+
 - name: protobuf-c
   cleanup:
   - "/include"
@@ -64,6 +52,7 @@ modules:
   - type: archive
     url: https://github.com/protobuf-c/protobuf-c/archive/refs/tags/v1.5.0.tar.gz
     sha256: d4cb022d55f49796959b07a9d83040822e39129bc0eb28f4e8301da17d758f62
+
 - name: qrencode
   buildsystem: cmake-ninja
   config-opts:
@@ -75,6 +64,7 @@ modules:
     sha256: 5385bc1b8c2f20f3b91d258bf8ccc8cf62023935df2d2676b5b67049f31a049c
   - type: patch
     path: cmake-minimum-3.12.patch
+
 - name: zbar
   config-opts:
   - "--without-qt"
@@ -90,6 +80,7 @@ modules:
   - type: archive
     url: https://www.linuxtv.org/downloads/zbar/zbar-0.23.93.tar.gz
     sha256: 78ae427a529f0399561bc198de5c2c7ca3f11d05fa9e903e65e501168433d218
+
 - name: libcotp
   buildsystem: cmake-ninja
   config-opts:
@@ -101,6 +92,7 @@ modules:
   - type: archive
     url: https://github.com/paolostivanin/libcotp/archive/v3.1.1.tar.gz
     sha256: 9b5778b8e38d9b0c33d6331ec980094b0035bf53e6064bbcc2ed988b0d4b3d13
+
 - name: OTPClient
   buildsystem: cmake-ninja
   config-opts:
