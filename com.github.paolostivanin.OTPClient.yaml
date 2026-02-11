@@ -84,7 +84,6 @@ modules:
   buildsystem: cmake-ninja
   config-opts:
   - "-DCMAKE_BUILD_TYPE=Release"
-  - "-DCMAKE_INSTALL_LIBDIR=lib"
   sources:
   - type: archive
     url: https://github.com/paolostivanin/libcotp/archive/v3.1.1.tar.gz
