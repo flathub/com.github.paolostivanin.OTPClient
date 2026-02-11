@@ -39,7 +39,7 @@ modules:
   sources:
   - type: archive
     url: https://github.com/protocolbuffers/protobuf/releases/download/v25.8/protobuf-25.8.tar.gz
-    sha256: 5a5d91be7a47b15cecebdc24188e5cfd0a2fc0af03ae93fa239e842c4a5128d0
+    sha256: 15a034460107cf403338c34fa4e07df8ab4fda7ee2785bea83854d6fdd705c90
 
 - name: protobuf-c
   cleanup:
