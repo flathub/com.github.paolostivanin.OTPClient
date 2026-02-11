@@ -38,8 +38,8 @@ modules:
   - "/lib/*.la"
   sources:
   - type: archive
-    url: https://github.com/protocolbuffers/protobuf/releases/download/v29.6/protobuf-29.6.tar.gz
-    sha256: 877bf9f880631aa31daf2c09896276985696728137fcd43cc534a28c5566d9ba
+    url: https://github.com/protocolbuffers/protobuf/releases/download/v25.8/protobuf-25.8.tar.gz
+    sha256: 5a5d91be7a47b15cecebdc24188e5cfd0a2fc0af03ae93fa239e842c4a5128d0
 
 - name: protobuf-c
   cleanup:
