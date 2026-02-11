@@ -21,8 +21,8 @@ modules:
   - "/lib/*.la"
   sources:
   - type: archive
-    url: https://github.com/akheron/jansson/releases/download/v2.14/jansson-2.14.tar.gz
-    sha256: 5798d010e41cf8d76b66236cfb2f2543c8d082181d16bc3085ab49538d4b9929
+    url: https://github.com/akheron/jansson/releases/download/v2.15.0/jansson-2.15.0.tar.gz
+    sha256: 070a629590723228dc3b744ae90e965a569efb9c535b3309b52e80e75d8eb3be
 
 - name: protobuf
   buildsystem: cmake-ninja
@@ -38,8 +38,8 @@ modules:
   - "/lib/*.la"
   sources:
   - type: archive
-    url: https://github.com/protocolbuffers/protobuf/releases/download/v25.2/protobuf-25.2.tar.gz
-    sha256: 8ff511a64fc46ee792d3fe49a5a1bcad6f7dc50dfbba5a28b0e5b979c17f9871
+    url: https://github.com/protocolbuffers/protobuf/releases/download/v25.8/protobuf-25.8.tar.gz
+    sha256: 15a034460107cf403338c34fa4e07df8ab4fda7ee2785bea83854d6fdd705c90
 
 - name: protobuf-c
   cleanup:
@@ -50,8 +50,8 @@ modules:
   - "/lib/*.la"
   sources:
   - type: archive
-    url: https://github.com/protobuf-c/protobuf-c/archive/refs/tags/v1.5.0.tar.gz
-    sha256: d4cb022d55f49796959b07a9d83040822e39129bc0eb28f4e8301da17d758f62
+    url: https://github.com/protobuf-c/protobuf-c/archive/refs/tags/v1.5.2.tar.gz
+    sha256: cea46eeaa19c52924938b582c5d128a6ed3b6fb5b3f4677476a1781cc06e03f3
 
 - name: qrencode
   buildsystem: cmake-ninja
@@ -100,5 +100,5 @@ modules:
   - "-DIS_FLATPAK=ON"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/otpclient/archive/v4.2.0.tar.gz
-    sha256: 38e3941ca5f75f006f28f48b499d61997ea3dbb8cf4f1e8e702ab2333024ca04
+    url: https://github.com/paolostivanin/otpclient/archive/v4.3.1.tar.gz
+    sha256: 35c4999d6b23ad4e58e84e34dc007d98d483c0edfe937f3a21132b3ae24adf4a
