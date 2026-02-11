@@ -11,14 +11,19 @@ finish-args:
 - "--talk-name=org.freedesktop.secrets"
 - "--talk-name=org.gtk.vfs.*"
 - "--filesystem=xdg-run/gvfsd"
+cleanup:
+- /include
+- /lib/cmake
+- /lib/pkgconfig"
+- "*.la"
+- "*.a"
+- /share/doc
+- /share/man
 modules:
 - name: jansson
   cleanup:
-  - "/include"
   - "/bin"
   - "/share"
-  - "/lib/pkgconfig"
-  - "/lib/*.la"
   sources:
   - type: archive
     url: https://github.com/akheron/jansson/releases/download/v2.15.0/jansson-2.15.0.tar.gz
@@ -31,11 +36,8 @@ modules:
   - "-Dprotobuf_BUILD_TESTS=OFF"
   - "-Dprotobuf_ABSL_PROVIDER=package"
   cleanup:
-  - "/include"
   - "/bin"
   - "/share"
-  - "/lib/pkgconfig"
-  - "/lib/*.la"
   sources:
   - type: archive
     url: https://github.com/protocolbuffers/protobuf/releases/download/v25.8/protobuf-25.8.tar.gz
@@ -43,11 +45,8 @@ modules:
 
 - name: protobuf-c
   cleanup:
-  - "/include"
   - "/bin"
   - "/share"
-  - "/lib/pkgconfig"
-  - "/lib/*.la"
   sources:
   - type: archive
     url: https://github.com/protobuf-c/protobuf-c/archive/refs/tags/v1.5.2.tar.gz
@@ -85,9 +84,6 @@ modules:
   buildsystem: cmake-ninja
   config-opts:
   - "-DCMAKE_BUILD_TYPE=Release"
-  - "-DCMAKE_INSTALL_LIBDIR=lib"
-  cleanup:
-  - "/include"
   sources:
   - type: archive
     url: https://github.com/paolostivanin/libcotp/archive/v3.1.1.tar.gz
