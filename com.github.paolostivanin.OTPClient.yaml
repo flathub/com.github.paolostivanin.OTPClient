@@ -1,6 +1,6 @@
 app-id: com.github.paolostivanin.OTPClient
 runtime: org.gnome.Platform
-runtime-version: '49'
+runtime-version: '50'
 sdk: org.gnome.Sdk
 command: otpclient
 finish-args:
@@ -86,8 +86,8 @@ modules:
   - "-DCMAKE_BUILD_TYPE=Release"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/libcotp/archive/v3.1.1.tar.gz
-    sha256: 9b5778b8e38d9b0c33d6331ec980094b0035bf53e6064bbcc2ed988b0d4b3d13
+    url: https://github.com/paolostivanin/libcotp/archive/v4.0.0.tar.gz
+    sha256: 6b17323779dac1699462d8914b81155d69914b0d28b5ed837f1570ed05f2bd90
 
 - name: OTPClient
   buildsystem: cmake-ninja
@@ -96,5 +96,5 @@ modules:
   - "-DIS_FLATPAK=ON"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/otpclient/archive/v4.3.1.tar.gz
-    sha256: 35c4999d6b23ad4e58e84e34dc007d98d483c0edfe937f3a21132b3ae24adf4a
+    url: https://github.com/paolostivanin/otpclient/archive/v4.4.1.tar.gz
+    sha256: d0de26c77fd0aaf0bd6eeef9a5854ec0422bd5a57e3c5a660cf69071621c792a
