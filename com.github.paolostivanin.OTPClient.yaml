@@ -14,7 +14,7 @@ finish-args:
 cleanup:
 - /include
 - /lib/cmake
-- /lib/pkgconfig"
+- /lib/pkgconfig
 - "*.la"
 - "*.a"
 - /share/doc
@@ -40,8 +40,8 @@ modules:
   - "/share"
   sources:
   - type: archive
-    url: https://github.com/protocolbuffers/protobuf/releases/download/v25.8/protobuf-25.8.tar.gz
-    sha256: 15a034460107cf403338c34fa4e07df8ab4fda7ee2785bea83854d6fdd705c90
+    url: https://github.com/protocolbuffers/protobuf/releases/download/v33.6/protobuf-33.6.tar.gz
+    sha256: 16498d7dc7967e9b100632138babd4b86b61592beeccdd556f67539d9c231355
 
 - name: protobuf-c
   cleanup:
@@ -96,5 +96,5 @@ modules:
   - "-DIS_FLATPAK=ON"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/otpclient/archive/v5.0.6.tar.gz
-    sha256: bf59c70a1099abb04835a4a634e232df2078ceace1d9657f45d01ede5037ceb4
+    url: https://github.com/paolostivanin/otpclient/archive/v5.1.0.tar.gz
+    sha256: db6a3e7b636adbc390864ab8a158b12bec0543be46a577031701205c97e386e5
