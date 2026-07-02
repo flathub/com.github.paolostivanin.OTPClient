@@ -32,7 +32,7 @@ modules:
 - name: protobuf
   buildsystem: cmake-ninja
   config-opts:
-  - "-DCMAKE_BUILD_TYPE=RelWithDebug"
+  - "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
   - "-Dprotobuf_BUILD_TESTS=OFF"
   - "-Dprotobuf_ABSL_PROVIDER=package"
   cleanup:
@@ -55,7 +55,7 @@ modules:
 - name: qrencode
   buildsystem: cmake-ninja
   config-opts:
-  - "-DCMAKE_BUILD_TYPE=RelWithDebug"
+  - "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
   - "-DBUILD_SHARED_LIBS=TRUE"
   sources:
   - type: archive
@@ -83,7 +83,7 @@ modules:
 - name: libcotp
   buildsystem: cmake-ninja
   config-opts:
-  - "-DCMAKE_BUILD_TYPE=RelWithDebug"
+  - "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
   sources:
   - type: archive
     url: https://github.com/paolostivanin/libcotp/archive/v4.1.0.tar.gz
@@ -92,7 +92,7 @@ modules:
 - name: OTPClient
   buildsystem: cmake-ninja
   config-opts:
-  - "-DCMAKE_BUILD_TYPE=RelWithDebug"
+  - "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
   - "-DIS_FLATPAK=ON"
   sources:
   - type: archive
