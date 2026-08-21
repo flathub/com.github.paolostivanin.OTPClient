@@ -11,6 +11,18 @@ finish-args:
 - "--talk-name=org.freedesktop.secrets"
 - "--talk-name=org.gtk.vfs.*"
 - "--filesystem=xdg-run/gvfsd"
+# Minimize to tray: find the watcher and register the item with it. No
+# own-name for org.kde.StatusNotifierItem-2-1, which the linter rejects and
+# which every sandboxed app would ask for anyway, since they are all pid 2;
+# 5.1.8 registers under the unique connection name instead.
+- "--talk-name=org.kde.StatusNotifierWatcher"
+# Auto-lock on screen lock: ActiveChanged from whichever screensaver the
+# desktop happens to run. Locking on suspend would need PrepareForSleep from
+# org.freedesktop.login1, which the linter does not allow.
+- "--talk-name=org.gnome.ScreenSaver"
+- "--talk-name=org.cinnamon.ScreenSaver"
+- "--talk-name=org.freedesktop.ScreenSaver"
+- "--talk-name=com.canonical.Unity"
 cleanup:
 - /include
 - /lib/cmake
