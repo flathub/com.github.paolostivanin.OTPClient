@@ -11,6 +11,18 @@ finish-args:
 - "--talk-name=org.freedesktop.secrets"
 - "--talk-name=org.gtk.vfs.*"
 - "--filesystem=xdg-run/gvfsd"
+# Minimize to tray: find the watcher and register the item with it. No
+# own-name for org.kde.StatusNotifierItem-2-1, which the linter rejects and
+# which every sandboxed app would ask for anyway, since they are all pid 2;
+# 5.1.8 registers under the unique connection name instead.
+- "--talk-name=org.kde.StatusNotifierWatcher"
+# Auto-lock on screen lock: ActiveChanged from whichever screensaver the
+# desktop happens to run. Locking on suspend would need PrepareForSleep from
+# org.freedesktop.login1, which the linter does not allow.
+- "--talk-name=org.gnome.ScreenSaver"
+- "--talk-name=org.cinnamon.ScreenSaver"
+- "--talk-name=org.freedesktop.ScreenSaver"
+- "--talk-name=com.canonical.Unity"
 cleanup:
 - /include
 - /lib/cmake
@@ -96,5 +108,5 @@ modules:
   - "-DIS_FLATPAK=ON"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/otpclient/archive/v5.1.7.tar.gz
-    sha256: 36e63a9156467210f3a84de258c9d4237f98be80061335ee87c64adbf5034b61
+    url: https://github.com/paolostivanin/otpclient/archive/v5.1.8.tar.gz
+    sha256: 3b45538fdf962f273cc4c18ef9851416515dd1cc46829f2c7a02cba5ae99c0e1
