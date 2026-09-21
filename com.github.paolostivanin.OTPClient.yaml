@@ -44,8 +44,8 @@ modules:
   - "/share"
   sources:
   - type: archive
-    url: https://github.com/akheron/jansson/releases/download/v2.15.0/jansson-2.15.0.tar.gz
-    sha256: 070a629590723228dc3b744ae90e965a569efb9c535b3309b52e80e75d8eb3be
+    url: https://github.com/akheron/jansson/releases/download/v2.15.1/jansson-2.15.1.tar.gz
+    sha256: 0c7114dc0b2d22a670724a1f95922029d7077c19dbf79a584cb8084d2f267f2f
     x-checker-data:
       type: anitya
       project-id: 1417
@@ -107,9 +107,13 @@ modules:
   - "--without-xv"
   - "--without-imagemagick"
   - "--without-dbus"
-  - "--with-python=python3"
+  - "--without-python"
   - "--disable-doc"
   - "--enable-codes=qrcode"
+  # zbarimg and zbarcam are not used; the app links libzbar directly.
+  cleanup:
+  - "/bin"
+  - "/share"
   sources:
   - type: archive
     url: https://www.linuxtv.org/downloads/zbar/zbar-0.23.93.tar.gz
@@ -175,8 +179,8 @@ modules:
   - "-DIS_FLATPAK=ON"
   sources:
   - type: archive
-    url: https://github.com/paolostivanin/otpclient/archive/v5.1.8.tar.gz
-    sha256: 3b45538fdf962f273cc4c18ef9851416515dd1cc46829f2c7a02cba5ae99c0e1
+    url: https://github.com/paolostivanin/otpclient/archive/v5.2.0.tar.gz
+    sha256: 627c632091831be500cdb4bc3dcefceef8082d972e587f8ff72c7c6e3f8eec26
     # Without is-main-source the bot guesses the last source in the manifest.
     # It happens to guess right today, which is not a reason to leave it out.
     x-checker-data:
