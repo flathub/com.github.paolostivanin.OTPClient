@@ -68,6 +68,11 @@ modules:
       type: anitya
       project-id: 3715
       url-template: https://github.com/protocolbuffers/protobuf/releases/download/v$version/protobuf-$version.tar.gz
+      # protobuf >= 34 removed the C++ FieldDescriptor::label() API that
+      # protobuf-c 1.5.2's protoc-gen-c still uses, so the buildbot build
+      # fails. Cap the checker until protobuf-c ships a compatible release.
+      versions:
+        "<": "34"
 
 - name: protobuf-c
   cleanup:
