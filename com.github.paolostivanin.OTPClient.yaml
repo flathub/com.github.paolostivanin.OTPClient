@@ -4,187 +4,187 @@ runtime-version: '50'
 sdk: org.gnome.Sdk
 command: otpclient
 finish-args:
-- "--share=ipc"
-- "--socket=fallback-x11"
-- "--socket=wayland"
-- "--device=all"
-- "--talk-name=org.freedesktop.secrets"
-- "--talk-name=org.gtk.vfs.*"
-- "--filesystem=xdg-run/gvfsd"
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --device=all
+  - --talk-name=org.freedesktop.secrets
+  - --talk-name=org.gtk.vfs.*
+  - --filesystem=xdg-run/gvfsd
 # Minimize to tray: find the watcher and register the item with it. No
 # own-name for org.kde.StatusNotifierItem-2-1, which the linter rejects and
 # which every sandboxed app would ask for anyway, since they are all pid 2;
 # 5.1.8 registers under the unique connection name instead.
-- "--talk-name=org.kde.StatusNotifierWatcher"
+  - --talk-name=org.kde.StatusNotifierWatcher
 # Auto-lock on screen lock: ActiveChanged from whichever screensaver the
 # desktop happens to run. Locking on suspend would need PrepareForSleep from
 # org.freedesktop.login1, which the linter does not allow.
-- "--talk-name=org.gnome.ScreenSaver"
-- "--talk-name=org.cinnamon.ScreenSaver"
-- "--talk-name=org.freedesktop.ScreenSaver"
-- "--talk-name=com.canonical.Unity"
+  - --talk-name=org.gnome.ScreenSaver
+  - --talk-name=org.cinnamon.ScreenSaver
+  - --talk-name=org.freedesktop.ScreenSaver
+  - --talk-name=com.canonical.Unity
 # Search provider: tell the user the OTP was copied, and on Plasma hand the
 # copy to Klipper rather than spawning wl-copy. Both are direct calls, not
 # portal ones, because the daemon is not a GApplication and the same code has
 # to keep working on native installs with no portal running.
-- "--talk-name=org.freedesktop.Notifications"
-- "--talk-name=org.kde.klipper"
+  - --talk-name=org.freedesktop.Notifications
+  - --talk-name=org.kde.klipper
 cleanup:
-- /include
-- /lib/cmake
-- /lib/pkgconfig
-- "*.la"
-- "*.a"
-- /share/doc
-- /share/man
+  - /include
+  - /lib/cmake
+  - /lib/pkgconfig
+  - '*.la'
+  - '*.a'
+  - /share/doc
+  - /share/man
 modules:
-- name: jansson
-  cleanup:
-  - "/bin"
-  - "/share"
-  sources:
-  - type: archive
-    url: https://github.com/akheron/jansson/releases/download/v2.15.1/jansson-2.15.1.tar.gz
-    sha256: 0c7114dc0b2d22a670724a1f95922029d7077c19dbf79a584cb8084d2f267f2f
-    x-checker-data:
-      type: anitya
-      project-id: 1417
-      url-template: https://github.com/akheron/jansson/releases/download/v$version/jansson-$version.tar.gz
+  - name: jansson
+    cleanup:
+      - /bin
+      - /share
+    sources:
+      - type: archive
+        url: https://github.com/akheron/jansson/releases/download/v2.15.1/jansson-2.15.1.tar.gz
+        sha256: 0c7114dc0b2d22a670724a1f95922029d7077c19dbf79a584cb8084d2f267f2f
+        x-checker-data:
+          type: anitya
+          project-id: 1417
+          url-template: https://github.com/akheron/jansson/releases/download/v$version/jansson-$version.tar.gz
 
-- name: protobuf
-  buildsystem: cmake-ninja
-  config-opts:
-  - "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
-  - "-Dprotobuf_BUILD_TESTS=OFF"
-  - "-Dprotobuf_ABSL_PROVIDER=package"
-  cleanup:
-  - "/bin"
-  - "/share"
-  sources:
-  - type: archive
-    url: https://github.com/protocolbuffers/protobuf/releases/download/v33.6/protobuf-33.6.tar.gz
-    sha256: 16498d7dc7967e9b100632138babd4b86b61592beeccdd556f67539d9c231355
-    x-checker-data:
-      type: anitya
-      project-id: 3715
-      url-template: https://github.com/protocolbuffers/protobuf/releases/download/v$version/protobuf-$version.tar.gz
+  - name: protobuf
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - -Dprotobuf_BUILD_TESTS=OFF
+      - -Dprotobuf_ABSL_PROVIDER=package
+    cleanup:
+      - /bin
+      - /share
+    sources:
+      - type: archive
+        url: https://github.com/protocolbuffers/protobuf/releases/download/v36.2/protobuf-36.2.tar.gz
+        sha256: 3d9642a662d10e68ebae5e53f14dcce5105684212d5078f8e0d47d1ab3ae6b64
+        x-checker-data:
+          type: anitya
+          project-id: 3715
+          url-template: https://github.com/protocolbuffers/protobuf/releases/download/v$version/protobuf-$version.tar.gz
 
-- name: protobuf-c
-  cleanup:
-  - "/bin"
-  - "/share"
-  sources:
-  - type: archive
-    url: https://github.com/protobuf-c/protobuf-c/archive/refs/tags/v1.5.2.tar.gz
-    sha256: cea46eeaa19c52924938b582c5d128a6ed3b6fb5b3f4677476a1781cc06e03f3
-    x-checker-data:
-      type: anitya
-      project-id: 3716
-      url-template: https://github.com/protobuf-c/protobuf-c/archive/refs/tags/v$version.tar.gz
+  - name: protobuf-c
+    cleanup:
+      - /bin
+      - /share
+    sources:
+      - type: archive
+        url: https://github.com/protobuf-c/protobuf-c/archive/refs/tags/v1.5.2.tar.gz
+        sha256: cea46eeaa19c52924938b582c5d128a6ed3b6fb5b3f4677476a1781cc06e03f3
+        x-checker-data:
+          type: anitya
+          project-id: 3716
+          url-template: https://github.com/protobuf-c/protobuf-c/archive/refs/tags/v$version.tar.gz
 
-- name: qrencode
-  buildsystem: cmake-ninja
-  config-opts:
-  - "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
-  - "-DBUILD_SHARED_LIBS=TRUE"
-  sources:
-  - type: archive
-    url: https://github.com/fukuchi/libqrencode/archive/refs/tags/v4.1.1.tar.gz
-    sha256: 5385bc1b8c2f20f3b91d258bf8ccc8cf62023935df2d2676b5b67049f31a049c
+  - name: qrencode
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - -DBUILD_SHARED_LIBS=TRUE
+    sources:
+      - type: archive
+        url: https://github.com/fukuchi/libqrencode/archive/refs/tags/v4.1.1.tar.gz
+        sha256: 5385bc1b8c2f20f3b91d258bf8ccc8cf62023935df2d2676b5b67049f31a049c
     # There is no anitya project called qrencode; it is libqrencode.
-    x-checker-data:
-      type: anitya
-      project-id: 12834
-      url-template: https://github.com/fukuchi/libqrencode/archive/refs/tags/v$version.tar.gz
-  - type: patch
-    path: cmake-minimum-3.12.patch
+        x-checker-data:
+          type: anitya
+          project-id: 12834
+          url-template: https://github.com/fukuchi/libqrencode/archive/refs/tags/v$version.tar.gz
+      - type: patch
+        path: cmake-minimum-3.12.patch
 
-- name: zbar
-  config-opts:
-  - "--without-qt"
-  - "--without-qt5"
-  - "--without-gtk"
-  - "--without-xv"
-  - "--without-imagemagick"
-  - "--without-dbus"
-  - "--without-python"
-  - "--disable-doc"
-  - "--enable-codes=qrcode"
+  - name: zbar
+    config-opts:
+      - --without-qt
+      - --without-qt5
+      - --without-gtk
+      - --without-xv
+      - --without-imagemagick
+      - --without-dbus
+      - --without-python
+      - --disable-doc
+      - --enable-codes=qrcode
   # zbarimg and zbarcam are not used; the app links libzbar directly.
-  cleanup:
-  - "/bin"
-  - "/share"
-  sources:
-  - type: archive
-    url: https://www.linuxtv.org/downloads/zbar/zbar-0.23.93.tar.gz
-    sha256: 78ae427a529f0399561bc198de5c2c7ca3f11d05fa9e903e65e501168433d218
+    cleanup:
+      - /bin
+      - /share
+    sources:
+      - type: archive
+        url: https://www.linuxtv.org/downloads/zbar/zbar-0.23.93.tar.gz
+        sha256: 78ae427a529f0399561bc198de5c2c7ca3f11d05fa9e903e65e501168433d218
     # anitya tracks the GitHub mirror while the tarballs live on linuxtv.org,
     # so check the first bump the bot proposes by hand.
-    x-checker-data:
-      type: anitya
-      project-id: 13689
-      url-template: https://www.linuxtv.org/downloads/zbar/zbar-$version.tar.gz
+        x-checker-data:
+          type: anitya
+          project-id: 13689
+          url-template: https://www.linuxtv.org/downloads/zbar/zbar-$version.tar.gz
 
-- name: libcotp
-  buildsystem: cmake-ninja
-  config-opts:
-  - "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
-  sources:
-  - type: archive
-    url: https://github.com/paolostivanin/libcotp/archive/v4.2.1.tar.gz
-    sha256: 5f0cc41049e9fa296c1edf09c6fb0bb6dae588b149d5049adbc41d21aefc1bb1
-    x-checker-data:
-      type: anitya
-      project-id: 319690
-      url-template: https://github.com/paolostivanin/libcotp/archive/v$version.tar.gz
+  - name: libcotp
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+    sources:
+      - type: archive
+        url: https://github.com/paolostivanin/libcotp/archive/v4.2.1.tar.gz
+        sha256: 5f0cc41049e9fa296c1edf09c6fb0bb6dae588b149d5049adbc41d21aefc1bb1
+        x-checker-data:
+          type: anitya
+          project-id: 319690
+          url-template: https://github.com/paolostivanin/libcotp/archive/v$version.tar.gz
 
 # The search provider copies the OTP by spawning a clipboard tool, and the
 # runtime ships none. Without these two, activating a KRunner or GNOME Shell
 # result silently copies nothing. wl-clipboard covers Wayland, xsel covers X11;
 # xclip would need libXmu and libXt for the same capability.
-- name: wl-clipboard
-  buildsystem: meson
-  config-opts:
-  - "-Dzshcompletiondir=no"
-  - "-Dfishcompletiondir=no"
-  cleanup:
-  - "/share"
-  sources:
-  - type: archive
-    url: https://github.com/bugaevc/wl-clipboard/archive/refs/tags/v2.3.0.tar.gz
-    sha256: b4dc560973f0cd74e02f817ffa2fd44ba645a4f1ea94b7b9614dacc9f895f402
-    x-checker-data:
-      type: anitya
-      project-id: 49082
-      url-template: https://github.com/bugaevc/wl-clipboard/archive/refs/tags/v$version.tar.gz
+  - name: wl-clipboard
+    buildsystem: meson
+    config-opts:
+      - -Dzshcompletiondir=no
+      - -Dfishcompletiondir=no
+    cleanup:
+      - /share
+    sources:
+      - type: archive
+        url: https://github.com/bugaevc/wl-clipboard/archive/refs/tags/v2.3.0.tar.gz
+        sha256: b4dc560973f0cd74e02f817ffa2fd44ba645a4f1ea94b7b9614dacc9f895f402
+        x-checker-data:
+          type: anitya
+          project-id: 49082
+          url-template: https://github.com/bugaevc/wl-clipboard/archive/refs/tags/v$version.tar.gz
 
-- name: xsel
-  buildsystem: autotools
-  cleanup:
-  - "/share"
-  sources:
+  - name: xsel
+    buildsystem: autotools
+    cleanup:
+      - /share
+    sources:
   # No leading v on these tags, unlike every other module here.
-  - type: archive
-    url: https://github.com/kfish/xsel/archive/refs/tags/1.2.1.tar.gz
-    sha256: 18487761f5ca626a036d65ef2db8ad9923bf61685e06e7533676c56d7d60eb14
-    x-checker-data:
-      type: anitya
-      project-id: 13995
-      url-template: https://github.com/kfish/xsel/archive/refs/tags/$version.tar.gz
+      - type: archive
+        url: https://github.com/kfish/xsel/archive/refs/tags/1.2.1.tar.gz
+        sha256: 18487761f5ca626a036d65ef2db8ad9923bf61685e06e7533676c56d7d60eb14
+        x-checker-data:
+          type: anitya
+          project-id: 13995
+          url-template: https://github.com/kfish/xsel/archive/refs/tags/$version.tar.gz
 
-- name: OTPClient
-  buildsystem: cmake-ninja
-  config-opts:
-  - "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
-  - "-DIS_FLATPAK=ON"
-  sources:
-  - type: archive
-    url: https://github.com/paolostivanin/otpclient/archive/v5.2.0.tar.gz
-    sha256: 627c632091831be500cdb4bc3dcefceef8082d972e587f8ff72c7c6e3f8eec26
+  - name: OTPClient
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - -DIS_FLATPAK=ON
+    sources:
+      - type: archive
+        url: https://github.com/paolostivanin/otpclient/archive/v5.2.0.tar.gz
+        sha256: 627c632091831be500cdb4bc3dcefceef8082d972e587f8ff72c7c6e3f8eec26
     # Without is-main-source the bot guesses the last source in the manifest.
     # It happens to guess right today, which is not a reason to leave it out.
-    x-checker-data:
-      type: anitya
-      project-id: 314612
-      is-main-source: true
-      url-template: https://github.com/paolostivanin/otpclient/archive/v$version.tar.gz
+        x-checker-data:
+          type: anitya
+          project-id: 314612
+          is-main-source: true
+          url-template: https://github.com/paolostivanin/otpclient/archive/v$version.tar.gz
