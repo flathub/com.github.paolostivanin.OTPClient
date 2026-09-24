@@ -23,11 +23,10 @@ finish-args:
   - --talk-name=org.cinnamon.ScreenSaver
   - --talk-name=org.freedesktop.ScreenSaver
   - --talk-name=com.canonical.Unity
-# Search provider: tell the user the OTP was copied, and on Plasma hand the
-# copy to Klipper rather than spawning wl-copy. Both are direct calls, not
-# portal ones, because the daemon is not a GApplication and the same code has
-# to keep working on native installs with no portal running.
-  - --talk-name=org.freedesktop.Notifications
+# Search provider: on Plasma, hand the copied OTP to Klipper rather than
+# spawning wl-copy. There is no portal for Klipper, so this stays a direct
+# call. The "code copied" notification goes through the notification portal
+# and needs nothing here.
   - --talk-name=org.kde.klipper
 cleanup:
   - /include
@@ -184,8 +183,8 @@ modules:
       - -DIS_FLATPAK=ON
     sources:
       - type: archive
-        url: https://github.com/paolostivanin/otpclient/archive/v5.2.1.tar.gz
-        sha256: bdd49352c58e33627ba6afcb93d4e533ef93fcac65cb74abd94761026ef17e51
+        url: https://github.com/paolostivanin/otpclient/archive/v5.2.2.tar.gz
+        sha256: 59504287fb5a5a00f98a1fac433e3f0354c0ef7c42c7ad992fe94ac37cde8539
     # Without is-main-source the bot guesses the last source in the manifest.
     # It happens to guess right today, which is not a reason to leave it out.
         x-checker-data:
