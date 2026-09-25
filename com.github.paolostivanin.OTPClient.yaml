@@ -135,8 +135,8 @@ modules:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
     sources:
       - type: archive
-        url: https://github.com/paolostivanin/libcotp/archive/v4.2.1.tar.gz
-        sha256: 5f0cc41049e9fa296c1edf09c6fb0bb6dae588b149d5049adbc41d21aefc1bb1
+        url: https://github.com/paolostivanin/libcotp/archive/v4.2.2.tar.gz
+        sha256: 52baa968de23be3d54465f214ba2733f848702b211711ba625db2535e14433b7
         x-checker-data:
           type: anitya
           project-id: 319690
