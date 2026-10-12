@@ -120,8 +120,8 @@ modules:
       - /share
     sources:
       - type: archive
-        url: https://www.linuxtv.org/downloads/zbar/zbar-0.23.93.tar.gz
-        sha256: 78ae427a529f0399561bc198de5c2c7ca3f11d05fa9e903e65e501168433d218
+        url: https://www.linuxtv.org/downloads/zbar/zbar-0.23.95.tar.gz
+        sha256: 7b0907a3114503e0a8fbd1c6bfdb61592e6ded79f68716d7ca673ddeb6a87e99
     # anitya tracks the GitHub mirror while the tarballs live on linuxtv.org,
     # so check the first bump the bot proposes by hand.
         x-checker-data:
