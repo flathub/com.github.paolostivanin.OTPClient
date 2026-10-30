@@ -43,12 +43,14 @@ modules:
       - /share
     sources:
       - type: archive
-        url: https://github.com/akheron/jansson/releases/download/v2.15.1/jansson-2.15.1.tar.gz
+        url: 
+          https://github.com/akheron/jansson/releases/download/v2.15.1/jansson-2.15.1.tar.gz
         sha256: 0c7114dc0b2d22a670724a1f95922029d7077c19dbf79a584cb8084d2f267f2f
         x-checker-data:
           type: anitya
           project-id: 1417
-          url-template: https://github.com/akheron/jansson/releases/download/v$version/jansson-$version.tar.gz
+          url-template: 
+            https://github.com/akheron/jansson/releases/download/v$version/jansson-$version.tar.gz
 
   - name: protobuf
     buildsystem: cmake-ninja
@@ -61,12 +63,14 @@ modules:
       - /share
     sources:
       - type: archive
-        url: https://github.com/protocolbuffers/protobuf/releases/download/v33.6/protobuf-33.6.tar.gz
+        url: 
+          https://github.com/protocolbuffers/protobuf/releases/download/v33.6/protobuf-33.6.tar.gz
         sha256: 16498d7dc7967e9b100632138babd4b86b61592beeccdd556f67539d9c231355
         x-checker-data:
           type: anitya
           project-id: 3715
-          url-template: https://github.com/protocolbuffers/protobuf/releases/download/v$version/protobuf-$version.tar.gz
+          url-template: 
+            https://github.com/protocolbuffers/protobuf/releases/download/v$version/protobuf-$version.tar.gz
       # protobuf >= 34 removed the C++ FieldDescriptor::label() API that
       # protobuf-c 1.5.2's protoc-gen-c still uses, so the buildbot build
       # fails. Cap the checker until protobuf-c ships a compatible release.
@@ -183,8 +187,8 @@ modules:
       - -DIS_FLATPAK=ON
     sources:
       - type: archive
-        url: https://github.com/paolostivanin/otpclient/archive/v5.2.2.tar.gz
-        sha256: 59504287fb5a5a00f98a1fac433e3f0354c0ef7c42c7ad992fe94ac37cde8539
+        url: https://github.com/paolostivanin/otpclient/archive/v5.3.0.tar.gz
+        sha256: 55900e6ab125791c7346fe5af31ee48db85f0eb71487fc292bb5f8ed174d318b
     # Without is-main-source the bot guesses the last source in the manifest.
     # It happens to guess right today, which is not a reason to leave it out.
         x-checker-data:
