@@ -104,30 +104,36 @@ modules:
         path: cmake-minimum-3.12.patch
 
   - name: zbar
+    # zbar 0.23.95 switched from Autotools to Meson.
+    buildsystem: meson
     config-opts:
-      - --without-qt
-      - --without-qt5
-      - --without-gtk
-      - --without-xv
-      - --without-imagemagick
-      - --without-dbus
-      - --without-python
-      - --disable-doc
-      - --enable-codes=qrcode
-  # zbarimg and zbarcam are not used; the app links libzbar directly.
+      - -Dlibrary_type=shared
+      - -Dcodes=qrcode
+      - -Dvideo=true
+      - -Dqt=false
+      - -Dgtk=no
+      - -Dpython=no
+      - -Djava=disabled
+      - -Dgir=false
+      - -Dimagemagick=disabled
+      - -Ddbus=disabled
+      - -Dxv=disabled
+      - -Ddoc=false
+      - -Dbuild_tests=false
+  # Keep video support for OTPClient's webcam scanner. Only the standalone
+  # zbarimg and zbarcam programs are unused; the app links libzbar directly.
     cleanup:
       - /bin
       - /share
     sources:
       - type: archive
-        url: https://www.linuxtv.org/downloads/zbar/zbar-0.23.93.tar.gz
-        sha256: 78ae427a529f0399561bc198de5c2c7ca3f11d05fa9e903e65e501168433d218
-    # anitya tracks the GitHub mirror while the tarballs live on linuxtv.org,
-    # so check the first bump the bot proposes by hand.
+        url: https://github.com/mchehab/zbar/archive/refs/tags/0.23.95.tar.gz
+        sha256: 3bad3fe7b8764c6e2131cba91d40e22567a1365352914b62b55247b49124ed33
+    # GitHub archives avoid the anti-bot challenge on linuxtv.org.
         x-checker-data:
           type: anitya
           project-id: 13689
-          url-template: https://www.linuxtv.org/downloads/zbar/zbar-$version.tar.gz
+          url-template: https://github.com/mchehab/zbar/archive/refs/tags/$version.tar.gz
 
   - name: libcotp
     buildsystem: cmake-ninja
@@ -183,8 +189,8 @@ modules:
       - -DIS_FLATPAK=ON
     sources:
       - type: archive
-        url: https://github.com/paolostivanin/otpclient/archive/v5.2.2.tar.gz
-        sha256: 59504287fb5a5a00f98a1fac433e3f0354c0ef7c42c7ad992fe94ac37cde8539
+        url: https://github.com/paolostivanin/otpclient/archive/v5.3.0.tar.gz
+        sha256: 55900e6ab125791c7346fe5af31ee48db85f0eb71487fc292bb5f8ed174d318b
     # Without is-main-source the bot guesses the last source in the manifest.
     # It happens to guess right today, which is not a reason to leave it out.
         x-checker-data:
