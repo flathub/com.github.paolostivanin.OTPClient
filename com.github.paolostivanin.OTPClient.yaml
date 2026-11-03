@@ -189,8 +189,8 @@ modules:
       - -DIS_FLATPAK=ON
     sources:
       - type: archive
-        url: https://github.com/paolostivanin/otpclient/archive/v5.3.1.tar.gz
-        sha256: 5df48285ce7f4daea344a3eabc99daf85168b1b9b15e047e99c8203949cc4de4
+        url: https://github.com/paolostivanin/otpclient/archive/v5.3.2.tar.gz
+        sha256: bb6b60723b7296e88aca6bb82bf468145869820b454be998a8cbe18712bde46d
     # Without is-main-source the bot guesses the last source in the manifest.
     # It happens to guess right today, which is not a reason to leave it out.
         x-checker-data:
